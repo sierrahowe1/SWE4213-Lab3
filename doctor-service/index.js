@@ -69,3 +69,7 @@ app.post('/doctors/:id/reserve', (req, res) => {
     });
    
 });
+
+app.listen(PORT, () => {
+    console.log(`Doctor service running on port ${PORT}`);
+});
