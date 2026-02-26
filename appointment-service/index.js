@@ -52,7 +52,7 @@ app.post('/appointments', async (req, res) => {
             if(doctorError.response) {
                 if(doctorError.response.status === 409) {
                     return res.status(409).json({
-                        "success": false,
+                        "status": "rejected",
                         "reason": doctorError.response.data.reason
                     });
                 }
