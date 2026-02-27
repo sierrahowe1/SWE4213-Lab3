@@ -1,0 +1,8 @@
+services:
+
+  doctor-service:
+    build: ./doctor-service
+    ports:
+      - "5001:5001"
+    environment:
+    
