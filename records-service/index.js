@@ -40,3 +40,5 @@ async function main() {
     }, { noAck: false});
 
 }
+
+main();
