@@ -11,10 +11,10 @@ services:
     ports:
       - "5002:5002"
     environment:
-     - NODE_ENV = production
-     - PORT = 5002
-     - SERVICE_NAME = doctor-service
-     - RABBITMQ_URL = amqp://guest:guest@rabbitmq:5672
+     - NODE_ENV=production
+     - PORT=5002
+     - SERVICE_NAME=doctor-service
+     - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672
     depends_on:
       - rabbitmq
   
@@ -23,10 +23,10 @@ services:
     ports: 
       - "5001:3001"
     environment:
-      - NODE_ENV = production
-      - PORT = 3001
-      - DOCTOR_SERVICE_URL= http://doctor-service:5002
-      - RABBITMQ_URL = amqp://guest:guest@rabbitmq:5672
+      - NODE_ENV=production
+      - PORT=3001
+      - DOCTOR_SERVICE_URL=http://doctor-service:5002
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672
     depends_on:
       - doctor-service
       - rabbitmq
@@ -34,16 +34,16 @@ services:
   notification-service:
     build: ./notification-service
     environment:
-      - NODE_ENV = production
-      - RABBITMQ_URL = amqp://guest:guest@rabbitmq:5672
+      - NODE_ENV=production
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672
     depends_on:
       - rabbitmq
   
   records-service:
     build: ./records-service
     environment:
-      - NODE_ENV = production
-      - RABBITMQ_URL = amqp://guest:guest@rabbitmq:5672
+      - NODE_ENV=production
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672
     depends_on:
       - rabbitmq
 
