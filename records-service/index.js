@@ -7,9 +7,9 @@ const appointmentRecords = [];
 async function main() {
     const connection = await amqp.connect(RABBITMQ_URL || "amqp://localhost");
     const channel = await connection.createChannel();
-    await channel.asserQueue('records', { durable: false});
+    await channel.assertQueue('records', { durable: false});
 
-    await channel.precheck(1);
+    await channel.prefetch(1);
     await channel.assertExchange('appts', 'fanout', { durable: false});
     await channel.bindQueue('records', 'appts', '');
 

@@ -21,7 +21,7 @@ services:
   appointment-service:
     build: ./appointment-service
     ports: 
-      - "5001:3001"
+      - "5001:5001"
     environment:
       - NODE_ENV=production
       - PORT=3001
