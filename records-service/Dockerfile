@@ -8,4 +8,4 @@ RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
 RUN chown -R nodejs:nodejs /usr/src/app
 USER nodejs
 
-CMD npm start
+CMD ["node", "index.js"]

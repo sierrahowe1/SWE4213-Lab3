@@ -3,7 +3,7 @@ const amqp = require('amqplib');
 const RABBITMQ_URL = process.env.RABBITMQ_URL || 'amqp://rabbitmq:5672';
 
 async function main() {
-    const connection = await connectWithRetry(RABBITMQ_URL || "amqp://localhost");
+    const connection = await amqp.connect(RABBITMQ_URL || "amqp://localhost");
     const channel = await connection.createChannel();
     await channel.assertQueue('notifications', { durable: false});
 

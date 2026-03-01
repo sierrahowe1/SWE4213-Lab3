@@ -6,4 +6,4 @@ EXPOSE 5002
 RUN npm install
 COPY . .
 
-CMD npm start
+CMD ["node", "index.js"]
